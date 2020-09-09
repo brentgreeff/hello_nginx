@@ -13,18 +13,15 @@ build() {
   set +x
 }
 
-b() {
+check_conf() {
   set -x
-  docker build \
-         --build-arg USER_ID=$(id -u) \
-         --build-arg GROUP_ID=$(id -g) \
-         -t mathapp .
+  pose exec x /usr/sbin/nginx -t
   set +x
 }
 
-dash() {
+dsh() {
   set -x
-  pose exec api bash
+  pose exec x sh
   set +x
 }
 

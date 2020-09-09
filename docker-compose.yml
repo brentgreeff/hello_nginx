@@ -1,9 +1,10 @@
 version: '3'
 services:
 
-  api:
+  x:
     build: .
     volumes:
-      - ./:/usr/share/nginx/html/
+      - ./conf/:/etc/nginx/conf.d/
+      - ./html/:/usr/share/nginx/html/
     ports:
       - "8080:80"
