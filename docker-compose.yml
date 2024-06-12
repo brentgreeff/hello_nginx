@@ -1,10 +1,14 @@
 version: '3'
-services:
 
+services:
   x:
     build: .
     volumes:
       - ./conf/:/etc/nginx/conf.d/
       - ./html/:/usr/share/nginx/html/
+    extra_hosts:
+      - "service1.myapi.com:127.0.0.1"
+      - "service2.myapi.com:127.0.0.1"
+      - "service3.myapi.com:127.0.0.1"
     ports:
       - "8080:80"

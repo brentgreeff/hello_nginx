@@ -1,0 +1,4 @@
+; Hosts for dnsmasq
+127.0.0.1  service1.myapi.com
+127.0.0.1  service2.myapi.com
+127.0.0.1  service3.myapi.com

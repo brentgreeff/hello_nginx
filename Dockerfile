@@ -1,4 +1,9 @@
 FROM nginx:mainline-alpine
+
+RUN apk -U add \
+  bind-tools
+  # dnsmasq
+
 RUN rm /etc/nginx/conf.d/*
-ADD conf/hello.conf /etc/nginx/conf.d/
-ADD html/index.html /usr/share/nginx/html/
+COPY conf/default.conf /etc/nginx/conf.d/
+COPY html/index.html /usr/share/nginx/html/
